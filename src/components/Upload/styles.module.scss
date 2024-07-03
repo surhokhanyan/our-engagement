@@ -1,0 +1,87 @@
+@import "../../assets/mixins/mixins.scss";
+
+.container {
+    width: 100%;
+    @include flColCenterStart();
+    gap: 20px;
+    padding: 100px 30px;
+    position: relative;
+    overflow: hidden;
+    background: #f1f3ee;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 223px;
+        height: 257px;
+        background: url("../../assets/svg/footer.svg");
+        background-size: cover;
+        left: 15px;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 800px;
+        background: url("../../assets/svg/footer_last.svg");
+        background-size: cover;
+        background-position: center;
+        right: 15px;
+    }
+    .subtitle {
+        color: #c8a898;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        text-align: center;
+        position: relative;
+        z-index: 88;
+    }
+    .title {
+        color: #101010;
+        display: inline-block;
+        font-size: 50px;
+        font-weight: 400;
+        margin: 10px 0 0;
+        position: relative;
+        z-index: 88;
+        text-align: center;
+    }
+    .info {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        color: #5c5c5c;
+        position: relative;
+        z-index: 88;
+        text-align: center;
+    }
+    & > a {
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        color: #5c5c5c;
+        text-decoration: none;
+        transition: 0.3s;
+        cursor: pointer;
+        position: relative;
+        z-index: 99;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    .image_wrapper {
+        width: 300px;
+        height: 300px;
+        @include flexCenter();
+        background: white;
+        border-radius: 50%;
+        position: relative;
+        z-index: 88;
+        & > img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+}

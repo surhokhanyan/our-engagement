@@ -1,0 +1,74 @@
+@import "../../assets/mixins/mixins.scss";
+
+.container {
+    position: relative;
+    @include flColCenter();
+    gap: 20px;
+    padding: 100px 0;
+    width: 100%;
+    .svg_wrapper1 {
+        position: absolute;
+        left: 0px;
+        bottom: 2px;
+        z-index: -1;
+    }
+    .svg_wrapper2 {
+        position: absolute;
+        top: 0px;
+        right: 2px;
+        z-index: -1;
+    }
+    .subtitle {
+        color: #c8a898;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        text-align: center;
+    }
+    .title {
+        color: #101010;
+        font-size: 50px;
+        font-weight: 400;
+        margin: 10px 0 0;
+    }
+    .info_wrapper {
+        @include flColCenter();
+        gap: 10px;
+        .image_wrapper {
+            @include size(420px, 420px);
+            background: #f1f3ee;
+            @include flexCenter();
+            border-radius: 50%;
+            @media screen and (max-width: 500px) {
+                @include size(340px, 340px);
+            }
+            & > img {
+                @include size(390px, 390px);
+                object-fit: cover;
+                border-radius: 50%;
+                @media screen and (max-width: 500px) {
+                    @include size(310px, 310px);
+                }
+            }
+        }
+        .place {
+            padding: 8px 80px;
+            background: #a5aa9c;
+            color: white;
+            font-size: 35px;
+            font-style: normal;
+            font-weight: 400;
+            @media screen and (max-width: 500px) {
+                padding: 8px 40px;
+            }
+        }
+        .time {
+            max-width: 150px;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            color: #5c5c5c;
+            text-align: center;
+        }
+    }
+}

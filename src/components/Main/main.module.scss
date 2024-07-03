@@ -1,0 +1,111 @@
+@import "../../assets/mixins/mixins.scss";
+
+.container {
+    @include flColCenter();
+    gap: 50px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: #f1f3ee;
+    padding: 50px;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 223px;
+        height: 257px;
+        background: url("../../assets/svg/footer.svg");
+        background-size: cover;
+        left: 15px;
+        z-index: -1;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 800px;
+        background: url("../../assets/svg/footer_last.svg");
+        background-size: cover;
+        background-position: center;
+        right: 15px;
+        z-index: -1;
+    }
+    .header {
+        color: #101010;
+        font-size: 90px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+        text-transform: capitalize;
+        @media screen and (max-width: 950px) {
+            font-size: 50px;
+        }
+        @media screen and (max-width: 500px) {
+            font-size: 30px;
+        }
+    }
+    .main {
+        @include flexCenter();
+        gap: 80px;
+        @media screen and (max-width: 700px) {
+            gap: 30px;
+        }
+        @media screen and (max-width: 670px) {
+            flex-direction: column;
+        }
+        .img_wrapper {
+            width: 450px;
+            height: 550px;
+            @include flexCenter();
+            @media screen and (max-width: 870px) {
+                width: 320px;
+                height: 350px;
+            }
+            background: white;
+            & > img {
+                width: 430px;
+                height: 530px;
+                object-fit: cover;
+                object-position: center;
+                @media screen and (max-width: 870px) {
+                    width: 300px;
+                    height: 330px;
+                }
+            }
+        }
+        .signIn {
+            @include flColStart();
+            gap: 20px;
+            @media screen and (max-width: 670px) {
+                align-items: center;
+            }
+            & > p {
+                color: #c8a898;
+                font-size: 25px;
+                font-style: normal;
+                font-weight: 400;
+                text-align: center;
+                @media screen and (max-width: 500px) {
+                    font-size: 20px;
+                }
+            }
+            & > input {
+                width: 300px;
+                height: 40px;
+                border: none;
+                outline: none;
+                background: rgba(255, 255, 255, 0.144);
+                border-bottom: 3px solid white;
+                padding: 10px;
+                font-size: 16px;
+                @media screen and (max-width: 500px) {
+                    font-size: 14px;
+                }
+            }
+            & > button {
+                padding: 10px 30px;
+                cursor: pointer;
+            }
+        }
+    }
+}

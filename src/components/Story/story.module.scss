@@ -1,0 +1,153 @@
+@import "../../assets/mixins/mixins.scss";
+
+.container {
+    @include flColCenterStart();
+    width: 100%;
+    min-height: 100vh;
+    background: #f1f3ee;
+    padding: 100px 0;
+    position: relative;
+
+    .flower_one {
+        position: absolute;
+        left: 15px;
+        top: 150px;
+        @media screen and (max-width: 500px) {
+            transform: scale(0.5);
+        }
+    }
+    .flower_two {
+        position: absolute;
+        right: 15px;
+        bottom: 100px;
+        @media screen and (max-width: 500px) {
+            transform: scale(0.5);
+        }
+    }
+    .header {
+        @include flColCenterStart();
+        gap: 12px;
+        position: relative;
+        z-index: 10;
+        @media screen and (max-width: 1100px) {
+            margin-bottom: 40px;
+        }
+        & > p {
+            color: #c8a898;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 400;
+            @media screen and (max-width: 500px) {
+                text-align: center;
+            }
+        }
+        & > h3 {
+            color: #101010;
+            font-size: 50px;
+            font-weight: 400;
+            @media screen and (max-width: 500px) {
+                text-align: center;
+            }
+        }
+    }
+    .story {
+        @include flexCenter();
+        gap: 100px;
+        position: relative;
+        z-index: 10;
+        @media screen and (max-width: 1200px) {
+            gap: 40px;
+        }
+        @media screen and (max-width: 1100px) {
+            flex-direction: column-reverse;
+            &:nth-of-type(odd) {
+                flex-direction: column;
+            }
+        }
+        @media screen and (max-width: 700px) {
+            border-bottom: 1px solid #c8a898;
+            margin-top: 50px;
+        }
+        .story_bg {
+            @include size(672px, 672px);
+            background: url("../../assets/svg/storyfirstbg.png");
+            background-size: cover;
+            @include flexCenter();
+            @media screen and (max-width: 690px) {
+                width: 93vw;
+                height: 93vw;
+            }
+
+            .image_wrapper {
+                @include size(340px, 430px);
+                background: white;
+                @include flexCenter();
+                @media screen and (max-width: 690px) {
+                    width: 70vw;
+                    height: 70vw;
+                }
+                & > img {
+                    @include size(300px, 390px);
+                    object-fit: cover;
+                    @media screen and (max-width: 690px) {
+                        width: 65vw;
+                        height: 65vw;
+                    }
+                }
+            }
+        }
+        .info_wrapper {
+            @include flColStart();
+            gap: 20px;
+            @media screen and (max-width: 500px) {
+                align-items: center;
+            }
+            & > p {
+                color: #c8a898;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                @media screen and (max-width: 500px) {
+                    text-align: center;
+                }
+                @media screen and (max-width: 500px) {
+                    padding: 0 10px;
+                }
+                &:nth-child(3) {
+                    color: #5c5c5c;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    max-width: 400px;
+                }
+            }
+            & > h3 {
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 400;
+                color: #101010;
+            }
+        }
+    }
+}
+
+.story {
+    &:nth-child(5) {
+        .story_bg {
+            background: url("../../assets/svg/story2.png");
+            background-size: cover;
+        }
+    }
+    &:nth-of-type(6) {
+        .story_bg {
+            background: url("../../assets/svg/story3.png");
+            background-size: cover;
+        }
+    }
+    &:nth-of-type(7) {
+        .story_bg {
+            background: url("../../assets/svg/storyfirstbg.png");
+            background-size: cover;
+        }
+    }
+}

@@ -1,0 +1,163 @@
+@import "../../assets/mixins/mixins.scss";
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    @include flexCenter();
+    gap: 50px;
+    background: #fcfdfa;
+    @media screen and (max-width: 1180px) {
+        flex-direction: column;
+        padding: 80px;
+    }
+    @media screen and (max-width: 700px) {
+        gap: 0px;
+        padding: 10px;
+    }
+    .left {
+        @include flColCenterStart();
+        gap: 25px;
+        & > h3 {
+            color: #101010;
+            font-size: 90px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-align: center;
+            text-transform: capitalize;
+            @media screen and (max-width: 1350px) {
+                font-size: 70px;
+            }
+            @media screen and (max-width: 700px) {
+                font-size: 50px;
+            }
+        }
+        & > p {
+            color: #5c5c5c;
+            font-size: 25px;
+            @media screen and (max-width: 1350px) {
+                font-size: 20px;
+            }
+            @media screen and (max-width: 700px) {
+                font-size: 18px;
+            }
+        }
+        .time_wrapper {
+            @include flexCenter();
+            gap: 20px;
+            .time {
+                @include flColCenter();
+                width: 80px;
+                gap: 8px;
+                @media screen and (max-width: 700px) {
+                    width: 50px;
+                }
+                .time_number {
+                    font-family: "Sail", system-ui;
+                    color: #657150;
+                    font-size: 60px;
+                    @media screen and (max-width: 700px) {
+                        font-size: 30px;
+                    }
+                }
+                .time_text {
+                    color: #5c5c5c;
+                    font-size: 20px;
+                    @media screen and (max-width: 700px) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+    .right {
+        @include flexCenter();
+        @include size(646px, 902px);
+        background: url("../../assets/images/bgMain.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        @media screen and (max-width: 1480px) {
+            @include size(500px, 702px);
+        }
+        @media screen and (max-width: 1350px) {
+            @include size(400px, 502px);
+        }
+        @media screen and (max-width: 500px) {
+            width: 100%;
+        }
+        .framer {
+            @include size(450px, 690px);
+            @include flexCenter();
+            position: relative;
+            background: #fff;
+            box-shadow: 0 0 6.1px 3.9px rgba(28, 31, 86, 0.06);
+            @media screen and (max-width: 1480px) {
+                @include size(350px, 602px);
+            }
+            @media screen and (max-width: 1350px) {
+                @include size(320px, 402px);
+            }
+            .image {
+                @include size(420px, 660px);
+                @include flexCenter();
+                background: url("../../assets/images/abu.jpg");
+                background-size: cover;
+                background-position: 65% 80%;
+                position: relative;
+                z-index: 88;
+                @media screen and (max-width: 1480px) {
+                    @include size(320px, 572px);
+                }
+                @media screen and (max-width: 1350px) {
+                    @include size(300px, 380px);
+                }
+                .sh_one {
+                    position: absolute;
+                    top: -80px;
+                    left: -60px;
+                    @media screen and (max-width: 700px) {
+                        transform: scale(0.5);
+                    }
+                }
+                .sh_two {
+                    position: absolute;
+                    top: -80px;
+                    right: -60px;
+                    @media screen and (max-width: 700px) {
+                        transform: scale(0.5);
+                    }
+                    @media screen and (max-width: 500px) {
+                        right: -20px;
+                    }
+                }
+                .sh_three {
+                    position: absolute;
+                    bottom: -80px;
+                    left: 60px;
+                    @media screen and (max-width: 700px) {
+                        transform: scale(0.5);
+                        left: 40px;
+                    }
+                }
+                .sh_four {
+                    position: absolute;
+                    bottom: -80px;
+                    right: -170px;
+                    @media screen and (max-width: 700px) {
+                        transform: scale(0.5);
+                        bottom: -120px;
+                    }
+                    @media screen and (max-width: 500px) {
+                        transform: scale(0.5);
+                        right: -70px;
+                    }
+                }
+            }
+        }
+    }
+}
+.finish {
+    font-family: "Sail", system-ui;
+    color: #657150;
+    font-size: 60px;
+}
